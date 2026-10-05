@@ -1,0 +1,1668 @@
+<html lang="fr" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bay Delivery | Expert en Livraison Express & E-commerce en Algérie (58 Wilayas)</title>
+<meta name="description" content="Bay Delivery : livraison express partout en Algérie en 24/48h, Cash On Delivery, ramassage gratuit et suivi en temps réel sur les 58 Wilayas.">
+
+<!-- Favicon (SVG inline) -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='14' fill='%230284c7'/%3E%3Ctext x='24' y='34' font-family='Arial' font-size='28' font-weight='bold' fill='white' text-anchor='middle'%3EB%3C/text%3E%3C/svg%3E">
+
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    darkMode: 'class',
+    theme: {
+      extend: {
+        colors: {
+          brand: {
+            50: '#f0f9ff',
+            100: '#e0f2fe',
+            200: '#bae6fd',
+            300: '#7dd3fc',
+            400: '#38bdf8',
+            500: '#0284c7',
+            600: '#0369a1',
+            700: '#075985',
+            800: '#0c4a6e',
+            navy: '#0B192C',
+            dark: '#050D1A',
+            accent: '#FF6B00',
+            accentHover: '#E05D00',
+            emerald: '#10B981'
+          }
+        },
+        fontFamily: {
+          sans: ['Inter', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'sans-serif']
+        },
+        boxShadow: {
+          glow: '0 0 25px -5px rgba(2, 132, 199, 0.35)',
+          glowOrange: '0 0 25px -5px rgba(255, 107, 0, 0.45)',
+          soft: '0 18px 40px -20px rgba(11, 25, 44, 0.35)'
+        }
+      }
+    }
+  }
+</script>
+
+<!-- Font Awesome + Google Fonts -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', system-ui, sans-serif; }
+  .heading-font { font-family: 'Plus Jakarta Sans', 'Inter', sans-serif; }
+
+  /* Hero background pattern */
+  .hero-pattern {
+    background-color: #0B192C;
+    background-image: radial-gradient(rgba(56, 189, 248, 0.16) 1px, transparent 0);
+    background-size: 32px 32px;
+    position: relative;
+  }
+  .hero-pattern::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(1200px 480px at 15% 0%, rgba(2,132,199,0.28), transparent 60%),
+                radial-gradient(900px 420px at 95% 100%, rgba(255,107,0,0.16), transparent 65%);
+    pointer-events: none;
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+  }
+  .glass-dark {
+    background: rgba(11, 25, 44, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .custom-scroll::-webkit-scrollbar { width: 6px; height: 6px; }
+  .custom-scroll::-webkit-scrollbar-track { background: transparent; }
+  .custom-scroll::-webkit-scrollbar-thumb { background-color: #0284c7; border-radius: 9999px; }
+
+  /* Animations */
+  .floating-badge { animation: float 4s ease-in-out infinite; }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+
+  .pulse-subtle { animation: pulseSubtle 2.5s infinite; }
+  @keyframes pulseSubtle {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.9; transform: scale(1.03); }
+  }
+
+  .animate-scaleIn { animation: scaleIn 0.25s ease-out; }
+  @keyframes scaleIn {
+    from { opacity: 0; transform: translateY(14px) scale(0.97); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  /* Scroll reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(26px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+  /* Baya assistant */
+  .baya-panel { transform-origin: bottom right; }
+  .baya-open { display: flex; }
+  .chat-bubble { animation: bubbleIn 0.32s cubic-bezier(0.16, 1, 0.3, 1); }
+  @keyframes bubbleIn {
+    from { opacity: 0; transform: translateY(10px) scale(0.97); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+  .typing i {
+    width: 6px; height: 6px; background: #94a3b8; border-radius: 50%;
+    display: inline-block; animation: blink 1.4s infinite both;
+  }
+  .typing i:nth-child(2) { animation-delay: 0.2s; }
+  .typing i:nth-child(3) { animation-delay: 0.4s; }
+  @keyframes blink {
+    0%, 80%, 100% { opacity: 0.3; transform: translateY(0); }
+    40% { opacity: 1; transform: translateY(-3px); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+    .reveal { opacity: 1; transform: none; }
+  }
+</style>
+</head>
+
+<body class="bg-slate-50 text-slate-800 antialiased overflow-x-hidden">
+
+<!-- ===================== TOP INFO BAR ===================== -->
+<header class="bg-brand-navy border-b border-slate-800 text-slate-300 text-xs py-2 px-4 select-none relative z-40">
+  <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+    <div class="flex items-center gap-6">
+      <a href="tel:+213550024896" class="flex items-center gap-2 hover:text-white transition">
+        <i class="fa-solid fa-phone text-brand-400"></i>
+        <span>+213 550 02 48 96</span>
+      </a>
+      <a href="mailto:contact@baydelivery.dz" class="hidden sm:flex items-center gap-2 hover:text-white transition">
+        <i class="fa-solid fa-envelope text-brand-400"></i>
+        <span>contact@baydelivery.dz</span>
+      </a>
+      <span class="hidden md:flex items-center gap-1.5 text-emerald-400 font-medium bg-emerald-950/60 px-2.5 py-0.5 rounded-full border border-emerald-800/40">
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+        Réseau opérationnel · 58 Wilayas
+      </span>
+    </div>
+    <div class="flex items-center gap-4 ml-auto">
+      <a href="#tarifs" class="text-slate-300 hover:text-brand-400 transition hidden sm:inline">Tarifs Pro</a>
+      <span class="text-slate-700 hidden sm:inline">|</span>
+      <div class="flex items-center gap-2 text-xs font-semibold">
+        <button class="text-white hover:text-brand-400 transition">FR</button>
+        <span class="text-slate-600">/</span>
+        <button class="text-slate-400 hover:text-brand-400 transition">عربي</button>
+      </div>
+      <button onclick="toggleModal('loginModal')" class="bg-brand-accent hover:bg-brand-accentHover text-white px-3 py-1 rounded font-semibold text-xs transition shadow-sm flex items-center gap-1.5">
+        <i class="fa-solid fa-user"></i> Espace Marchand
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== NAVIGATION ===================== -->
+<nav id="mainNav" class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 transition-all shadow-sm">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-20">
+
+      <!-- LOGO (nouveau) -->
+      <a href="#" class="flex items-center gap-3 group" aria-label="Bay Delivery - Accueil">
+        <svg width="46" height="46" viewBox="0 0 48 48" fill="none" class="drop-shadow-md group-hover:scale-105 transition-transform duration-300 flex-shrink-0" role="img" aria-hidden="true">
+          <defs>
+            <linearGradient id="bdLogoGrad" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#38BDF8"/>
+              <stop offset="0.55" stop-color="#0284C7"/>
+              <stop offset="1" stop-color="#075985"/>
+            </linearGradient>
+            <linearGradient id="bdLogoAccent" x1="34" y1="28" x2="46" y2="44" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#FFB703"/>
+              <stop offset="1" stop-color="#FF6B00"/>
+            </linearGradient>
+          </defs>
+          <rect x="1" y="1" width="46" height="46" rx="14" fill="url(#bdLogoGrad)"/>
+          <rect x="1" y="1" width="46" height="46" rx="14" stroke="rgba(255,255,255,0.20)" stroke-width="1.5"/>
+          <path d="M10 17h7M7.5 24h9.5M10 31h7" stroke="rgba(255,255,255,0.45)" stroke-width="2.2" stroke-linecap="round"/>
+          <text x="26" y="33" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="26" font-weight="900" fill="#ffffff" text-anchor="middle">B</text>
+          <circle cx="38" cy="37" r="8.5" fill="url(#bdLogoAccent)" stroke="#0B192C" stroke-width="2.2"/>
+          <path d="M34.6 37h6.4M38.4 34.2 41.2 37l-2.8 2.8" stroke="#ffffff" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class="flex flex-col leading-none">
+          <div class="flex items-center">
+            <span class="heading-font font-black text-2xl tracking-tight text-brand-navy">BAY</span>
+            <span class="heading-font font-black text-2xl tracking-tight text-brand-500 ml-1">DELIVERY</span>
+            <span class="w-2 h-2 rounded-full bg-brand-accent ml-1 mb-2"></span>
+          </div>
+          <span class="text-[10px] uppercase font-bold tracking-[0.18em] text-slate-400 mt-1">Express Logistics · DZ</span>
+        </div>
+      </a>
+
+      <!-- Desktop links -->
+      <div class="hidden lg:flex items-center gap-7 font-medium text-sm text-slate-700">
+        <a href="#" class="text-brand-600 font-semibold hover:text-brand-600 transition">Accueil</a>
+        <a href="#suivi" class="hover:text-brand-600 transition flex items-center gap-1">
+          <i class="fa-solid fa-magnifying-glass text-xs text-brand-500"></i> Suivi de Colis
+        </a>
+        <a href="#services" class="hover:text-brand-600 transition">Nos Services</a>
+        <a href="#wilayas" class="hover:text-brand-600 transition">58 Wilayas</a>
+        <a href="#simulateur" class="hover:text-brand-600 transition">Calculateur</a>
+        <a href="#avantages" class="hover:text-brand-600 transition">E-commerçants</a>
+        <a href="#contact" class="hover:text-brand-600 transition">Contact</a>
+      </div>
+
+      <!-- CTA -->
+      <div class="hidden sm:flex items-center gap-3">
+        <a href="#suivi" class="px-4 py-2.5 rounded-xl border border-slate-300 text-slate-700 hover:border-brand-500 hover:text-brand-600 font-semibold text-sm transition">
+          <i class="fa-solid fa-barcode mr-1.5 text-brand-500"></i> Suivre
+        </a>
+        <button onclick="toggleModal('registerModal')" class="bg-brand-500 hover:bg-brand-600 text-white font-semibold text-sm px-5 py-2.5 rounded-xl shadow-glow transition transform active:scale-95 flex items-center gap-2">
+          <span>Ouvrir un Compte</span>
+          <i class="fa-solid fa-arrow-right text-xs"></i>
+        </button>
+      </div>
+
+      <!-- Mobile menu button -->
+      <div class="flex lg:hidden items-center gap-2">
+        <button id="mobileMenuBtn" class="p-2.5 rounded-lg text-slate-700 hover:bg-slate-100 focus:outline-none" aria-label="Ouvrir le menu">
+          <i class="fa-solid fa-bars text-2xl"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile drawer -->
+  <div id="mobileMenu" class="hidden lg:hidden border-t border-slate-100 bg-white px-4 pt-3 pb-6 space-y-3 shadow-xl">
+    <a href="#" class="block px-3 py-2 rounded-lg font-semibold text-brand-600 bg-brand-50">Accueil</a>
+    <a href="#suivi" class="block px-3 py-2 rounded-lg font-medium text-slate-700 hover:bg-slate-50">Suivi de Colis</a>
+    <a href="#services" class="block px-3 py-2 rounded-lg font-medium text-slate-700 hover:bg-slate-50">Nos Services</a>
+    <a href="#wilayas" class="block px-3 py-2 rounded-lg font-medium text-slate-700 hover:bg-slate-50">Couverture 58 Wilayas</a>
+    <a href="#simulateur" class="block px-3 py-2 rounded-lg font-medium text-slate-700 hover:bg-slate-50">Calculateur de Tarif</a>
+    <a href="#avantages" class="block px-3 py-2 rounded-lg font-medium text-slate-700 hover:bg-slate-50">Espace Marchand</a>
+    <a href="#contact" class="block px-3 py-2 rounded-lg font-medium text-slate-700 hover:bg-slate-50">Contact & Support</a>
+    <div class="pt-3 border-t border-slate-100 flex flex-col gap-2">
+      <button onclick="toggleModal('loginModal'); closeMobileMenu();" class="w-full text-center bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold py-2.5 rounded-xl text-sm">Connexion Marchand</button>
+      <button onclick="toggleModal('registerModal'); closeMobileMenu();" class="w-full text-center bg-brand-500 hover:bg-brand-600 text-white font-semibold py-2.5 rounded-xl text-sm shadow-md">Créer mon compte Pro</button>
+      <a href="https://wa.me/213550024896" target="_blank" rel="noopener" class="w-full text-center bg-emerald-500 hover:bg-emerald-600 text-white font-semibold py-2.5 rounded-xl text-sm shadow-md flex items-center justify-center gap-2">
+        <i class="fa-brands fa-whatsapp"></i> WhatsApp +213 550 02 48 96
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero-pattern text-white pt-16 pb-28 lg:pt-24 lg:pb-36 overflow-hidden">
+  <div class="absolute top-1/4 -left-20 w-96 h-96 bg-brand-500/20 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="absolute bottom-10 right-0 w-[500px] h-[500px] bg-brand-accent/10 rounded-full blur-3xl pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="grid lg:grid-cols-12 gap-12 items-center">
+
+      <!-- Left -->
+      <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md text-xs font-semibold text-brand-300">
+          <span class="w-2 h-2 rounded-full bg-brand-accent animate-ping"></span>
+          Leader de la livraison e-commerce &amp; express en Algérie
+        </div>
+
+        <h1 class="heading-font text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.12]">
+          Livrez vos colis partout en
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 via-sky-300 to-amber-300">Algérie en 24/48h</span>
+        </h1>
+
+        <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+          <strong class="text-white font-semibold">Bay Delivery</strong> accompagne les boutiques e-commerce, entreprises et particuliers avec un service fiable, le retour des fonds (COD) ultra-rapide et un suivi en temps réel sur les 58 Wilayas.
+        </p>
+
+        <!-- Tracking widget -->
+        <div id="suivi" class="pt-2 scroll-mt-28">
+          <div class="bg-white p-2.5 sm:p-3 rounded-2xl shadow-2xl border border-slate-200 max-w-xl mx-auto lg:mx-0">
+            <label for="heroTrackInput" class="text-xs font-bold text-slate-700 mb-1.5 px-1 text-left flex items-center justify-between">
+              <span><i class="fa-solid fa-location-crosshairs text-brand-500 mr-1"></i> Suivre votre colis</span>
+              <span class="text-[11px] text-slate-400 font-normal">Ex: BAY-784521-DZ</span>
+            </label>
+            <form id="heroTrackForm" onsubmit="handleTracking(event, 'heroTrackInput')" class="flex flex-col sm:flex-row gap-2">
+              <div class="relative flex-grow">
+                <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+                  <i class="fa-solid fa-barcode text-lg"></i>
+                </div>
+                <input type="text" id="heroTrackInput" placeholder="Entrez votre N° de suivi" required value="BAY-784521-DZ"
+                  class="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-800 text-sm font-semibold placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:bg-white transition">
+              </div>
+              <button type="submit" class="bg-brand-accent hover:bg-brand-accentHover text-white px-7 py-3 rounded-xl font-bold text-sm shadow-glowOrange transition transform active:scale-95 flex items-center justify-center gap-2">
+                <span>Tracer Colis</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="pt-6 grid grid-cols-3 gap-4 border-t border-white/10 max-w-lg mx-auto lg:mx-0 text-left">
+          <div>
+            <div class="heading-font text-2xl sm:text-3xl font-black text-white">58</div>
+            <div class="text-xs text-slate-400 font-medium">Wilayas couvertes</div>
+          </div>
+          <div>
+            <div class="heading-font text-2xl sm:text-3xl font-black text-brand-400">98.4%</div>
+            <div class="text-xs text-slate-400 font-medium">Taux de livraison</div>
+          </div>
+          <div>
+            <div class="heading-font text-2xl sm:text-3xl font-black text-emerald-400">24h</div>
+            <div class="text-xs text-slate-400 font-medium">Retour Cash COD</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right : quick quote -->
+      <div class="lg:col-span-5 relative">
+        <div class="glass-dark p-6 sm:p-8 rounded-3xl relative shadow-2xl border border-white/15">
+          <div class="absolute -top-4 -right-4 bg-emerald-500 text-white text-xs font-bold px-3.5 py-1.5 rounded-full shadow-lg flex items-center gap-1.5 floating-badge">
+            <i class="fa-solid fa-bolt text-yellow-300"></i> Ramassage Gratuit
+          </div>
+
+          <div class="flex items-center justify-between pb-4 border-b border-white/10 mb-6">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-brand-500/30 flex items-center justify-center text-brand-400 text-lg">
+                <i class="fa-solid fa-calculator"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-white text-base">Estimation Express</h3>
+                <p class="text-xs text-slate-400">Calculateur instantané de livraison</p>
+              </div>
+            </div>
+            <span class="text-xs bg-brand-500/20 text-brand-300 px-2.5 py-1 rounded-lg border border-brand-500/30 font-semibold">Tarif 2025</span>
+          </div>
+
+          <div class="space-y-4 text-left">
+            <div>
+              <label for="heroOriginWilaya" class="block text-xs font-semibold text-slate-300 mb-1.5">Wilaya d'expédition</label>
+              <select id="heroOriginWilaya" class="w-full bg-slate-900/90 border border-slate-700 text-white rounded-xl px-3.5 py-2.5 text-sm focus:border-brand-500 focus:outline-none">
+                <option value="16">16 - Alger (Hub Principal)</option>
+                <option value="31">31 - Oran</option>
+                <option value="25">25 - Constantine</option>
+                <option value="19">19 - Sétif</option>
+                <option value="06">06 - Béjaïa</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="heroDestWilaya" class="block text-xs font-semibold text-slate-300 mb-1.5">Wilaya de destination</label>
+              <select id="heroDestWilaya" onchange="calculateHeroTarif()" class="w-full bg-slate-900/90 border border-slate-700 text-white rounded-xl px-3.5 py-2.5 text-sm focus:border-brand-500 focus:outline-none">
+                <option value="16">16 - Alger (Centre / Banlieue)</option>
+                <option value="31">31 - Oran</option>
+                <option value="09">09 - Blida</option>
+                <option value="25">25 - Constantine</option>
+                <option value="23">23 - Annaba</option>
+                <option value="13">13 - Tlemcen</option>
+                <option value="30">30 - Ouargla (Sud)</option>
+                <option value="11">11 - Tamanrasset (Grand Sud)</option>
+              </select>
+            </div>
+
+            <div class="grid grid-cols-2 gap-3">
+              <div>
+                <label for="heroDeliveryMode" class="block text-xs font-semibold text-slate-300 mb-1.5">Mode de livraison</label>
+                <select id="heroDeliveryMode" onchange="calculateHeroTarif()" class="w-full bg-slate-900/90 border border-slate-700 text-white rounded-xl px-3 py-2.5 text-xs focus:border-brand-500 focus:outline-none">
+                  <option value="domicile">À Domicile</option>
+                  <option value="stopdesk">Stop Desk / Bureau</option>
+                </select>
+              </div>
+              <div>
+                <label for="heroWeight" class="block text-xs font-semibold text-slate-300 mb-1.5">Poids estimé</label>
+                <select id="heroWeight" onchange="calculateHeroTarif()" class="w-full bg-slate-900/90 border border-slate-700 text-white rounded-xl px-3 py-2.5 text-xs focus:border-brand-500 focus:outline-none">
+                  <option value="0">Moins de 5 Kg</option>
+                  <option value="1">5 Kg à 10 Kg</option>
+                  <option value="2">+ 10 Kg</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-xl bg-gradient-to-r from-brand-900/70 to-slate-900/80 border border-brand-500/30 flex items-center justify-between mt-4">
+            <div>
+              <div class="text-[11px] text-brand-300 font-medium uppercase tracking-wider">Tarif estimé HT</div>
+              <div id="heroResultPrice" class="heading-font text-2xl font-extrabold text-white">450 DZD</div>
+            </div>
+            <div class="text-right">
+              <div class="text-[11px] text-slate-400">Délai estimé</div>
+              <div id="heroResultDelay" class="text-sm font-bold text-emerald-400">24 Heures</div>
+            </div>
+          </div>
+
+          <button onclick="toggleModal('registerModal')" class="w-full py-3 mt-4 bg-white hover:bg-slate-100 text-brand-navy font-bold rounded-xl transition text-sm flex items-center justify-center gap-2">
+            <i class="fa-solid fa-truck-ramp-box text-brand-500"></i>
+            Expédier avec Bay Delivery
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FEATURES STRIP ===================== -->
+<section class="bg-white border-b border-slate-200 relative -mt-10 z-20 mx-4 sm:mx-8 lg:mx-auto max-w-7xl rounded-2xl shadow-xl p-6">
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div class="flex items-start gap-4">
+      <div class="w-12 h-12 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center text-xl flex-shrink-0"><i class="fa-solid fa-map-location-dot"></i></div>
+      <div>
+        <h4 class="font-bold text-slate-900 text-base">58 Wilayas</h4>
+        <p class="text-xs text-slate-500 mt-1">Couverture intégrale à domicile et en points Stop-Desk relais.</p>
+      </div>
+    </div>
+    <div class="flex items-start gap-4">
+      <div class="w-12 h-12 rounded-xl bg-amber-50 text-brand-accent flex items-center justify-center text-xl flex-shrink-0"><i class="fa-solid fa-money-bill-transfer"></i></div>
+      <div>
+        <h4 class="font-bold text-slate-900 text-base">Retour Cash Express</h4>
+        <p class="text-xs text-slate-500 mt-1">Versement de vos fonds COD sous 24h à 48h par virement CCP ou Cash.</p>
+      </div>
+    </div>
+    <div class="flex items-start gap-4">
+      <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-xl flex-shrink-0"><i class="fa-solid fa-laptop-code"></i></div>
+      <div>
+        <h4 class="font-bold text-slate-900 text-base">Plateforme &amp; API Pro</h4>
+        <p class="text-xs text-slate-500 mt-1">Intégration Shopify, WooCommerce, YouCan &amp; impression d'étiquettes.</p>
+      </div>
+    </div>
+    <div class="flex items-start gap-4">
+      <div class="w-12 h-12 rounded-xl bg-sky-50 text-sky-600 flex items-center justify-center text-xl flex-shrink-0"><i class="fa-solid fa-handshake-angle"></i></div>
+      <div>
+        <h4 class="font-bold text-slate-900 text-base">Service Client Dédié</h4>
+        <p class="text-xs text-slate-500 mt-1">Équipe locale + assistante Baya disponible 7j/7 sur WhatsApp.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SERVICES ===================== -->
+<section id="services" class="py-20 bg-slate-50 scroll-mt-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+      <span class="text-brand-600 font-bold text-xs uppercase tracking-wider bg-brand-50 px-3 py-1 rounded-full border border-brand-100">Solutions Logistiques Clé-en-Main</span>
+      <h2 class="heading-font text-3xl sm:text-4xl font-extrabold text-brand-navy mt-3">Pourquoi choisir Bay Delivery pour vos colis ?</h2>
+      <p class="text-slate-600 mt-3 text-base">Une infrastructure logistique moderne pensée spécialement pour les exigences du e-commerce en Algérie.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <div class="bg-white rounded-2xl p-7 shadow-sm hover:shadow-xl transition duration-300 border border-slate-200/80 group reveal">
+        <div class="w-14 h-14 rounded-2xl bg-brand-500 text-white flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition transform shadow-md"><i class="fa-solid fa-motorcycle"></i></div>
+        <h3 class="font-bold text-xl text-slate-900 mb-2.5">Livraison Express B2C &amp; C2C</h3>
+        <p class="text-slate-600 text-sm leading-relaxed mb-4">Livraison sécurisée directement au pas de la porte de vos clients ou retrait pratique dans l'un de nos nombreux points de collecte (Stop Desk).</p>
+        <ul class="text-xs space-y-2 text-slate-500 border-t border-slate-100 pt-4">
+          <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Notification SMS au client</li>
+          <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Double tentative de livraison</li>
+          <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Ouverture du colis avant paiement</li>
+        </ul>
+      </div>
+
+      <div class="bg-white rounded-2xl p-7 shadow-sm hover:shadow-xl transition duration-300 border border-slate-200/80 group reveal">
+        <div class="w-14 h-14 rounded-2xl bg-brand-accent text-white flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition transform shadow-md"><i class="fa-solid fa-vault"></i></div>
+        <h3 class="font-bold text-xl text-slate-900 mb-2.5">Cash On Delivery (COD)</h3>
+        <p class="text-slate-600 text-sm leading-relaxed mb-4">Collecte des fonds à la livraison avec une traçabilité 100% transparente et des virements bancaires / CCP rapides et sécurisés.</p>
+        <ul class="text-xs space-y-2 text-slate-500 border-t border-slate-100 pt-4">
+          <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Versements bi-hebdomadaires ou quotidiens</li>
+          <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Bordereau détaillé téléchargeable</li>
+          <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> 0% de frais cachés</li>
+        </ul>
+      </div>
+
+      <div class="bg-white rounded-2xl p-7 shadow-sm hover:shadow-xl transition duration-300 border border-slate-200/80 group reveal">
+        <div class="w-14 h-14 rounded-2xl bg-emerald-500 text-white flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition transform shadow-md"><i class="fa-solid fa-warehouse"></i></div>
+        <h3 class="font-bold text-xl text-slate-900 mb-2.5">Stockage &amp; Fulfillment</h3>
+        <p class="text-slate-600 text-sm leading-relaxed mb-4">Stockez vos marchandises dans nos entrepôts sécurisés. Nous nous occupons du packaging, du scannage et de l'expédition immédiate.</p>
+        <ul class="text-xs space-y-2 text-slate-500 border-t border-slate-100 pt-4">
+          <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Gestion d'inventaire en temps réel</li>
+          <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Emballage soigné &amp; personnalisable</li>
+          <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Réduction des coûts fixes</li>
+        </ul>
+      </div>
+
+      <div class="bg-white rounded-2xl p-7 shadow-sm hover:shadow-xl transition duration-300 border border-slate-200/80 group reveal">
+        <div class="w-14 h-14 rounded-2xl bg-indigo-600 text-white flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition transform shadow-md"><i class="fa-solid fa-rotate-left"></i></div>
+        <h3 class="font-bold text-xl text-slate-900 mb-2.5">Gestion Optimisée des Retours</h3>
+        <p class="text-slate-600 text-sm leading-relaxed mb-4">Réduction drastique du taux d'échec grâce à notre cellule de confirmation téléphonique préalable et rapatriement express des retours.</p>
+        <ul class="text-xs space-y-2 text-slate-500 border-t border-slate-100 pt-4">
+          <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Échange de produit au domicile du client</li>
+          <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Traitement rapide des NPAI</li>
+          <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Réintégration rapide en stock</li>
+        </ul>
+      </div>
+
+      <div class="bg-white rounded-2xl p-7 shadow-sm hover:shadow-xl transition duration-300 border border-slate-200/80 group reveal">
+        <div class="w-14 h-14 rounded-2xl bg-cyan-600 text-white flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition transform shadow-md"><i class="fa-solid fa-truck-pickup"></i></div>
+        <h3 class="font-bold text-xl text-slate-900 mb-2.5">Ramassage Gratuit Quotidien</h3>
+        <p class="text-slate-600 text-sm leading-relaxed mb-4">Nos coursiers dédiés se déplacent chaque jour à votre local ou entrepôt pour collecter vos colis sans frais supplémentaires.</p>
+        <ul class="text-xs space-y-2 text-slate-500 border-t border-slate-100 pt-4">
+          <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Dès le 1er colis pour les partenaires pro</li>
+          <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Créneaux horaires flexibles</li>
+          <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Scan immédiat de prise en charge</li>
+        </ul>
+      </div>
+
+      <div class="bg-white rounded-2xl p-7 shadow-sm hover:shadow-xl transition duration-300 border border-slate-200/80 group reveal">
+        <div class="w-14 h-14 rounded-2xl bg-slate-800 text-white flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition transform shadow-md"><i class="fa-solid fa-code-merge"></i></div>
+        <h3 class="font-bold text-xl text-slate-900 mb-2.5">API &amp; Plugins E-commerce</h3>
+        <p class="text-slate-600 text-sm leading-relaxed mb-4">Connectez votre site e-commerce en 5 minutes. Vos commandes se synchronisent automatiquement vers notre plateforme logistique.</p>
+        <ul class="text-xs space-y-2 text-slate-500 border-t border-slate-100 pt-4">
+          <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Modules Shopify, WooCommerce &amp; YouCan</li>
+          <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Webhooks &amp; API REST documentée</li>
+          <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Génération automatique des bordereaux (AWB)</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== WILAYAS ===================== -->
+<section id="wilayas" class="py-20 bg-brand-navy text-white relative overflow-hidden scroll-mt-24">
+  <div class="absolute -top-24 -right-24 w-[420px] h-[420px] bg-brand-500/10 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="grid lg:grid-cols-12 gap-12 items-center">
+
+      <div class="lg:col-span-5 space-y-6 reveal">
+        <span class="text-brand-400 font-bold text-xs uppercase tracking-wider bg-brand-500/20 px-3 py-1 rounded-full border border-brand-400/30">Réseau National DZ</span>
+        <h2 class="heading-font text-3xl sm:text-4xl font-black">Présents dans les 58 Wilayas du Nord au Grand Sud</h2>
+        <p class="text-slate-300 text-sm leading-relaxed">
+          Avec plus de 120 hubs et points relais à travers l'Algérie, Bay Delivery assure des délais records : 24h sur Alger et les grandes métropoles, 48h sur les hauts plateaux et 72h maximum dans le Sud.
+        </p>
+
+        <div class="bg-slate-900/80 p-4 rounded-2xl border border-slate-700">
+          <label for="wilayaSearchInput" class="block text-xs font-semibold text-slate-300 mb-2">Vérifier la disponibilité de votre Wilaya :</label>
+          <div class="relative">
+            <input type="text" id="wilayaSearchInput" onkeyup="filterWilayas()" placeholder="Rechercher par nom ou code (ex: Oran, 31, Sétif...)"
+              class="w-full bg-slate-800 border border-slate-600 rounded-xl px-4 py-2.5 pr-10 text-sm text-white placeholder-slate-400 focus:outline-none focus:border-brand-400">
+            <i class="fa-solid fa-magnifying-glass absolute right-3.5 top-3.5 text-slate-400"></i>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap gap-4 text-xs">
+          <div class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-emerald-400"></span><span>Livraison à Domicile</span></div>
+          <div class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-brand-400"></span><span>Points Relais Stop-Desk</span></div>
+          <div class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-amber-400"></span><span>Paiement à la livraison</span></div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-7 reveal">
+        <div class="bg-slate-900/90 rounded-3xl p-6 border border-slate-800 shadow-2xl">
+          <div class="flex items-center justify-between pb-3 border-b border-slate-800 mb-4">
+            <h4 class="font-bold text-sm text-slate-200">Liste des Wilayas Couvertes</h4>
+            <span id="wilayaCountBadge" class="text-xs bg-brand-500/30 text-brand-300 font-bold px-2.5 py-1 rounded-lg">58 Wilayas Actives</span>
+          </div>
+          <div id="wilayasListContainer" class="grid grid-cols-2 sm:grid-cols-3 gap-2.5 max-h-[380px] overflow-y-auto custom-scroll pr-2 text-xs"></div>
+          <p class="text-[11px] text-slate-500 mt-4 flex items-center gap-2">
+            <i class="fa-solid fa-circle-info text-brand-400"></i> Cliquez sur une wilaya pour obtenir un aperçu tarifaire instantané.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SIMULATEUR ===================== -->
+<section id="simulateur" class="py-20 bg-white scroll-mt-24">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-12 reveal">
+      <span class="text-brand-600 font-bold text-xs uppercase tracking-wider bg-brand-50 px-3 py-1 rounded-full border border-brand-100">Transparence Totale</span>
+      <h2 class="heading-font text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3">Calculateur de Frais de Livraison</h2>
+      <p class="text-slate-600 mt-2 text-sm">Estimez vos coûts d'envoi en fonction du type de colis et de la destination.</p>
+    </div>
+
+    <div class="bg-gradient-to-br from-slate-50 to-brand-50/40 p-6 sm:p-10 rounded-3xl border border-slate-200/90 shadow-xl reveal">
+      <div class="grid md:grid-cols-3 gap-6">
+
+        <div>
+          <label for="simWilaya" class="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-2">Wilaya d'arrivée</label>
+          <select id="simWilaya" onchange="runFullSimulation()" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-sm font-semibold text-slate-800 focus:outline-none focus:ring-2 focus:ring-brand-500 shadow-sm">
+            <option value="16">16 - Alger (Centre / Périphérie)</option>
+            <option value="31">31 - Oran</option>
+            <option value="25">25 - Constantine</option>
+            <option value="09">09 - Blida</option>
+            <option value="35">35 - Boumerdès</option>
+            <option value="19">19 - Sétif</option>
+            <option value="06">06 - Béjaïa</option>
+            <option value="15">15 - Tizi Ouzou</option>
+            <option value="13">13 - Tlemcen</option>
+            <option value="23">23 - Annaba</option>
+            <option value="30">30 - Ouargla</option>
+            <option value="47">47 - Ghardaïa</option>
+            <option value="11">11 - Tamanrasset</option>
+            <option value="01">01 - Adrar</option>
+          </select>
+        </div>
+
+        <div>
+          <span class="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-2">Service</span>
+          <div class="grid grid-cols-2 gap-2">
+            <button type="button" id="btnModeDomicile" onclick="setSimMode('domicile')" class="py-3 px-3 rounded-xl border-2 border-brand-500 bg-brand-50 font-bold text-xs text-brand-700 text-center transition">
+              <i class="fa-solid fa-house block text-base mb-1 text-brand-600"></i> À Domicile
+            </button>
+            <button type="button" id="btnModeDesk" onclick="setSimMode('desk')" class="py-3 px-3 rounded-xl border border-slate-300 bg-white font-semibold text-xs text-slate-700 text-center hover:border-slate-400 transition">
+              <i class="fa-solid fa-building block text-base mb-1 text-slate-500"></i> Stop Desk
+            </button>
+          </div>
+        </div>
+
+        <div>
+          <label for="simWeightSlider" class="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-2">Poids du Colis (Kg)</label>
+          <div class="flex items-center bg-white border border-slate-300 rounded-xl px-4 py-2.5 shadow-sm">
+            <input type="range" id="simWeightSlider" min="1" max="25" value="2" oninput="updateSimWeight(this.value)" class="w-full accent-brand-500 cursor-pointer">
+            <span id="simWeightDisplay" class="font-bold text-brand-600 text-sm ml-3 min-w-[52px] text-right">2 Kg</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-8 pt-8 border-t border-slate-200 grid sm:grid-cols-3 gap-6 items-center bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm">
+        <div>
+          <span class="text-xs text-slate-400 uppercase font-semibold">Tarif d'expédition HT</span>
+          <div id="simFinalPrice" class="heading-font text-3xl sm:text-4xl font-black text-brand-600">450 DZD</div>
+          <span class="text-[11px] text-slate-400">* Tarifs dégressifs pour volume élevé</span>
+        </div>
+        <div>
+          <span class="text-xs text-slate-400 uppercase font-semibold">Délai Garanti</span>
+          <div id="simFinalDelay" class="text-xl font-extrabold text-slate-800 flex items-center gap-2">
+            <i class="fa-solid fa-clock text-amber-500"></i> 24 Heures
+          </div>
+          <span class="text-[11px] text-emerald-600 font-semibold"><i class="fa-solid fa-circle-check"></i> Ramassage inclus</span>
+        </div>
+        <div class="sm:text-right">
+          <button onclick="toggleModal('registerModal')" class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-brand-accent hover:bg-brand-accentHover text-white font-bold text-sm shadow-md transition transform active:scale-95 inline-flex items-center justify-center gap-2">
+            <i class="fa-solid fa-file-signature"></i> Ouvrir Compte Pro
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ESPACE MARCHAND ===================== -->
+<section id="avantages" class="py-20 bg-slate-900 text-white relative scroll-mt-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+
+      <div class="space-y-6 reveal">
+        <span class="text-brand-400 font-bold text-xs uppercase tracking-wider bg-brand-500/20 px-3.5 py-1.5 rounded-full border border-brand-400/30">Espace E-commerçants 100% Automatisé</span>
+        <h2 class="heading-font text-3xl sm:text-4xl font-black leading-tight">Pilotez toute votre activité logistique depuis votre tableau de bord.</h2>
+        <p class="text-slate-300 text-base leading-relaxed">
+          Ne perdez plus votre temps à rédiger des bordereaux manuellement ou à appeler pour savoir où sont vos colis. Notre portail Marchand vous donne le contrôle total.
+        </p>
+
+        <div class="space-y-4">
+          <div class="flex items-start gap-3.5">
+            <div class="w-7 h-7 rounded-lg bg-brand-500/30 text-brand-400 flex items-center justify-center text-sm flex-shrink-0 mt-0.5"><i class="fa-solid fa-check"></i></div>
+            <div>
+              <h4 class="text-sm font-bold text-white">Importation de commandes en 1 clic</h4>
+              <p class="text-xs text-slate-400">Importez par fichier Excel / CSV ou synchronisez automatiquement vos paniers Shopify et WooCommerce.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3.5">
+            <div class="w-7 h-7 rounded-lg bg-brand-500/30 text-brand-400 flex items-center justify-center text-sm flex-shrink-0 mt-0.5"><i class="fa-solid fa-check"></i></div>
+            <div>
+              <h4 class="text-sm font-bold text-white">Impression thermique des étiquettes (A6 / A4)</h4>
+              <p class="text-xs text-slate-400">Générez des étiquettes code-barres professionnelles prêtes à coller sur vos paquets.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3.5">
+            <div class="w-7 h-7 rounded-lg bg-brand-500/30 text-brand-400 flex items-center justify-center text-sm flex-shrink-0 mt-0.5"><i class="fa-solid fa-check"></i></div>
+            <div>
+              <h4 class="text-sm font-bold text-white">Rapports financiers et virements transparents</h4>
+              <p class="text-xs text-slate-400">Historique clair de vos versements Cash On Delivery avec détails par wilaya et par produit.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-4 flex flex-wrap gap-4">
+          <button onclick="toggleModal('registerModal')" class="bg-brand-500 hover:bg-brand-600 text-white font-bold px-6 py-3.5 rounded-xl text-sm shadow-glow transition">Rejoindre le Réseau Bay Delivery</button>
+          <button onclick="toggleModal('loginModal')" class="bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold px-6 py-3.5 rounded-xl text-sm border border-slate-700 transition">Se Connecter au Portail</button>
+        </div>
+      </div>
+
+      <!-- Dashboard mockup -->
+      <div class="relative reveal">
+        <div class="bg-slate-800 rounded-3xl p-5 border border-slate-700 shadow-2xl relative">
+          <div class="flex items-center justify-between pb-4 mb-4 border-b border-slate-700">
+            <div class="flex items-center gap-2">
+              <span class="w-3 h-3 rounded-full bg-red-500"></span>
+              <span class="w-3 h-3 rounded-full bg-yellow-500"></span>
+              <span class="w-3 h-3 rounded-full bg-emerald-500"></span>
+              <span class="text-xs text-slate-400 ml-2 font-mono">dashboard.baydelivery.dz</span>
+            </div>
+            <span class="text-xs bg-emerald-500/20 text-emerald-300 font-semibold px-2 py-0.5 rounded">En direct</span>
+          </div>
+
+          <div class="grid grid-cols-3 gap-3 mb-4">
+            <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-700/60">
+              <div class="text-[10px] text-slate-400">Colis ce mois</div>
+              <div class="text-lg font-black text-white">1,482</div>
+              <div class="text-[10px] text-emerald-400 font-bold">+18.5%</div>
+            </div>
+            <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-700/60">
+              <div class="text-[10px] text-slate-400">Taux Réussite</div>
+              <div class="text-lg font-black text-emerald-400">96.8%</div>
+              <div class="text-[10px] text-slate-400">Excellent</div>
+            </div>
+            <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-700/60">
+              <div class="text-[10px] text-slate-400">Solde COD prêt</div>
+              <div class="text-lg font-black text-amber-400">485,000 DA</div>
+              <div class="text-[10px] text-slate-400">Virement Demain</div>
+            </div>
+          </div>
+
+          <div class="bg-slate-900/90 rounded-xl p-3 border border-slate-700 text-xs">
+            <div class="font-bold text-slate-300 mb-2 pb-1 border-b border-slate-800 flex justify-between">
+              <span>Dernières Expéditions</span>
+              <span class="text-brand-400 text-[11px] cursor-pointer">Voir tout</span>
+            </div>
+            <div class="space-y-2">
+              <div class="flex items-center justify-between py-1.5 border-b border-slate-800/60">
+                <div>
+                  <div class="font-semibold text-white">#BAY-90214</div>
+                  <div class="text-[10px] text-slate-400">Oran (Domicile)</div>
+                </div>
+                <span class="px-2 py-0.5 bg-emerald-500/20 text-emerald-400 rounded text-[10px] font-bold">Livré</span>
+                <span class="font-bold text-slate-300">4,200 DA</span>
+              </div>
+              <div class="flex items-center justify-between py-1.5 border-b border-slate-800/60">
+                <div>
+                  <div class="font-semibold text-white">#BAY-90215</div>
+                  <div class="text-[10px] text-slate-400">Constantine (StopDesk)</div>
+                </div>
+                <span class="px-2 py-0.5 bg-sky-500/20 text-sky-400 rounded text-[10px] font-bold">En Route</span>
+                <span class="font-bold text-slate-300">8,900 DA</span>
+              </div>
+              <div class="flex items-center justify-between py-1.5">
+                <div>
+                  <div class="font-semibold text-white">#BAY-90216</div>
+                  <div class="text-[10px] text-slate-400">Alger (Bab Ezzouar)</div>
+                </div>
+                <span class="px-2 py-0.5 bg-amber-500/20 text-amber-400 rounded text-[10px] font-bold">En Livraison</span>
+                <span class="font-bold text-slate-300">12,500 DA</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TEMOIGNAGES ===================== -->
+<section class="py-20 bg-slate-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-14 reveal">
+      <span class="text-brand-600 font-bold text-xs uppercase tracking-wider bg-brand-50 px-3 py-1 rounded-full border border-brand-100">Témoignages</span>
+      <h2 class="heading-font text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3">Ils font confiance à Bay Delivery</h2>
+      <p class="text-slate-600 text-sm mt-2">Plus de 2 500 marques et boutiques e-commerce algériennes propulsent leurs ventes avec notre service.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-white p-7 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between reveal">
+        <div>
+          <div class="flex text-amber-400 mb-3 text-sm">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="text-slate-600 text-sm italic mb-6">« Depuis que nous sommes passés chez Bay Delivery, notre taux de retour est tombé sous la barre des 4%. Les versements COD sont toujours à l'heure, un vrai soulagement pour notre trésorerie. »</p>
+        </div>
+        <div class="flex items-center gap-3 pt-4 border-t border-slate-100">
+          <div class="w-10 h-10 rounded-full bg-brand-100 text-brand-600 font-bold flex items-center justify-center text-sm">YM</div>
+          <div>
+            <div class="font-bold text-sm text-slate-900">Youcef M.</div>
+            <div class="text-xs text-slate-400">Fondateur de DZ-Cosmetics (Alger)</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white p-7 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between reveal">
+        <div>
+          <div class="flex text-amber-400 mb-3 text-sm">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="text-slate-600 text-sm italic mb-6">« L'intégration avec notre boutique Shopify s'est faite en quelques clics. Le ramassage quotidien gratuit à notre entrepôt d'Oran nous a fait gagner 3 heures par jour ! »</p>
+        </div>
+        <div class="flex items-center gap-3 pt-4 border-t border-slate-100">
+          <div class="w-10 h-10 rounded-full bg-orange-100 text-brand-accent font-bold flex items-center justify-center text-sm">SK</div>
+          <div>
+            <div class="font-bold text-sm text-slate-900">Sarah K.</div>
+            <div class="text-xs text-slate-400">Gérante de ModDZ Fashion (Oran)</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white p-7 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between reveal">
+        <div>
+          <div class="flex text-amber-400 mb-3 text-sm">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="text-slate-600 text-sm italic mb-6">« Service client très réactif, et l'assistante Baya répond en quelques secondes sur WhatsApp. Quand un client change d'adresse, les livreurs font l'effort de le relancer poliment. »</p>
+        </div>
+        <div class="flex items-center gap-3 pt-4 border-t border-slate-100">
+          <div class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-600 font-bold flex items-center justify-center text-sm">AB</div>
+          <div>
+            <div class="font-bold text-sm text-slate-900">Amine B.</div>
+            <div class="text-xs text-slate-400">TechStore DZ (Sétif)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CONTACT ===================== -->
+<section id="contact" class="py-20 bg-white scroll-mt-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="bg-gradient-to-r from-brand-navy to-slate-900 rounded-3xl text-white p-8 sm:p-14 shadow-2xl overflow-hidden relative reveal">
+      <div class="absolute -bottom-24 -left-24 w-80 h-80 bg-brand-500/20 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="grid lg:grid-cols-12 gap-10 items-center relative z-10">
+
+        <div class="lg:col-span-7 space-y-6">
+          <span class="text-brand-400 text-xs uppercase font-bold tracking-widest bg-white/10 px-3 py-1 rounded-full">Support &amp; Renseignements</span>
+          <h2 class="heading-font text-3xl sm:text-4xl font-extrabold">Besoin d'une offre sur-mesure pour votre boutique ?</h2>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            Contactez notre équipe commerciale pour bénéficier de grilles tarifaires dégressives et configurer votre compte professionnel en moins d'une heure.
+          </p>
+
+          <div class="grid sm:grid-cols-2 gap-4 pt-2 text-sm">
+            <a href="tel:+213550024896" class="flex items-center gap-3 group">
+              <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-brand-400 group-hover:bg-white/20 transition"><i class="fa-solid fa-phone"></i></div>
+              <div>
+                <div class="text-xs text-slate-400">Appelez-nous</div>
+                <div class="font-bold">+213 550 02 48 96</div>
+              </div>
+            </a>
+            <a href="https://wa.me/213550024896" target="_blank" rel="noopener" class="flex items-center gap-3 group">
+              <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-emerald-400 group-hover:bg-white/20 transition"><i class="fa-brands fa-whatsapp text-lg"></i></div>
+              <div>
+                <div class="text-xs text-slate-400">WhatsApp Commercial</div>
+                <div class="font-bold">+213 550 02 48 96</div>
+              </div>
+            </a>
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-brand-accent"><i class="fa-solid fa-location-dot"></i></div>
+              <div>
+                <div class="text-xs text-slate-400">Siège Social</div>
+                <div class="font-bold">Chéraga / Bab Ezzouar, Alger</div>
+              </div>
+            </div>
+            <a href="mailto:contact@baydelivery.dz" class="flex items-center gap-3 group">
+              <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-sky-400 group-hover:bg-white/20 transition"><i class="fa-solid fa-envelope"></i></div>
+              <div>
+                <div class="text-xs text-slate-400">Email Pro</div>
+                <div class="font-bold">contact@baydelivery.dz</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5">
+          <div class="bg-white text-slate-800 p-6 sm:p-8 rounded-2xl shadow-xl">
+            <h3 class="font-bold text-lg text-slate-900 mb-1">Être rappelé par un conseiller</h3>
+            <p class="text-xs text-slate-500 mb-4">Laissez vos coordonnées, nous vous répondons sous 30 minutes.</p>
+            <form onsubmit="handleContactSubmit(event)" class="space-y-3">
+              <div>
+                <label for="cName" class="block text-[11px] font-bold text-slate-700 uppercase">Nom / Nom de la marque</label>
+                <input id="cName" type="text" required placeholder="Ex: Boutique Élégance" class="w-full mt-1 px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
+              </div>
+              <div>
+                <label for="cPhone" class="block text-[11px] font-bold text-slate-700 uppercase">Numéro de téléphone</label>
+                <input id="cPhone" type="tel" required placeholder="0550 02 48 96" class="w-full mt-1 px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
+              </div>
+              <div>
+                <label for="cVolume" class="block text-[11px] font-bold text-slate-700 uppercase">Estimation colis / jour</label>
+                <select id="cVolume" class="w-full mt-1 px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 text-slate-700">
+                  <option>Débutant (1 - 10 colis/jour)</option>
+                  <option>Moyen (10 - 50 colis/jour)</option>
+                  <option>Grand Compte (+50 colis/jour)</option>
+                </select>
+              </div>
+              <button type="submit" class="w-full py-3 bg-brand-500 hover:bg-brand-600 text-white font-bold rounded-xl text-sm transition mt-2 shadow-md flex items-center justify-center gap-2">
+                <span>Demander à être recontacté</span>
+                <i class="fa-solid fa-paper-plane text-xs"></i>
+              </button>
+              <a href="https://wa.me/213550024896" target="_blank" rel="noopener" class="w-full py-3 bg-emerald-500 hover:bg-emerald-600 text-white font-bold rounded-xl text-sm transition shadow-md flex items-center justify-center gap-2">
+                <i class="fa-brands fa-whatsapp text-base"></i>
+                <span>Discuter maintenant sur WhatsApp</span>
+              </a>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="bg-slate-950 text-slate-400 text-xs border-t border-slate-800 pt-16 pb-12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
+
+      <div class="lg:col-span-2 space-y-4">
+        <div class="flex items-center gap-3">
+          <svg width="40" height="40" viewBox="0 0 48 48" fill="none" aria-hidden="true" class="flex-shrink-0">
+            <defs>
+              <linearGradient id="bdLogoGradFooter" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#38BDF8"/><stop offset="0.55" stop-color="#0284C7"/><stop offset="1" stop-color="#075985"/>
+              </linearGradient>
+              <linearGradient id="bdLogoAccentFooter" x1="34" y1="28" x2="46" y2="44" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#FFB703"/><stop offset="1" stop-color="#FF6B00"/>
+              </linearGradient>
+            </defs>
+            <rect x="1" y="1" width="46" height="46" rx="14" fill="url(#bdLogoGradFooter)"/>
+            <path d="M10 17h7M7.5 24h9.5M10 31h7" stroke="rgba(255,255,255,0.45)" stroke-width="2.2" stroke-linecap="round"/>
+            <text x="26" y="33" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="26" font-weight="900" fill="#ffffff" text-anchor="middle">B</text>
+            <circle cx="38" cy="37" r="8.5" fill="url(#bdLogoAccentFooter)" stroke="#0B192C" stroke-width="2.2"/>
+            <path d="M34.6 37h6.4M38.4 34.2 41.2 37l-2.8 2.8" stroke="#ffffff" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="heading-font font-black text-2xl text-white tracking-tight">BAY <span class="text-brand-400">DELIVERY</span></span>
+        </div>
+        <p class="text-slate-400 text-xs leading-relaxed max-w-sm">
+          La solution d'expédition express et de logistique e-commerce de référence en Algérie. Couverture des 58 Wilayas, gestion du Cash On Delivery et intégration technologique avancée.
+        </p>
+        <div class="flex items-center gap-3 pt-2 text-base text-slate-300">
+          <a href="#" aria-label="Facebook" class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand-500 hover:text-white transition"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram" class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand-500 hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn" class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand-500 hover:text-white transition"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://wa.me/213550024896" target="_blank" rel="noopener" aria-label="WhatsApp" class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center hover:bg-emerald-600 hover:text-white transition"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+
+      <div>
+        <h5 class="text-white font-bold text-sm uppercase mb-4 tracking-wider">Services</h5>
+        <ul class="space-y-2.5">
+          <li><a href="#services" class="hover:text-white transition">Livraison Domicile</a></li>
+          <li><a href="#services" class="hover:text-white transition">Point Relais Stop Desk</a></li>
+          <li><a href="#services" class="hover:text-white transition">Ramassage Gratuit</a></li>
+          <li><a href="#services" class="hover:text-white transition">Encaissement COD</a></li>
+          <li><a href="#services" class="hover:text-white transition">Stockage &amp; Packaging</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h5 class="text-white font-bold text-sm uppercase mb-4 tracking-wider">Liens Rapides</h5>
+        <ul class="space-y-2.5">
+          <li><a href="#suivi" class="hover:text-white transition">Suivre un Colis</a></li>
+          <li><a href="#simulateur" class="hover:text-white transition">Calculateur de Tarif</a></li>
+          <li><a href="#wilayas" class="hover:text-white transition">Grille 58 Wilayas</a></li>
+          <li><button onclick="toggleModal('loginModal')" class="hover:text-white transition">Connexion Marchand</button></li>
+          <li><button onclick="toggleModal('registerModal')" class="hover:text-white transition">Création de Compte</button></li>
+        </ul>
+      </div>
+
+      <div>
+        <h5 class="text-white font-bold text-sm uppercase mb-4 tracking-wider">Hub Principal</h5>
+        <p class="text-slate-400 mb-2">Zone Industrielle Bab Ezzouar / Dar El Beïda, Alger</p>
+        <a href="tel:+213550024896" class="text-slate-300 font-semibold mb-1 block hover:text-brand-400 transition">
+          <i class="fa-solid fa-headset mr-1.5 text-brand-400"></i> +213 550 02 48 96
+        </a>
+        <a href="https://wa.me/213550024896" target="_blank" rel="noopener" class="text-emerald-400 font-semibold mb-2 block hover:text-emerald-300 transition">
+          <i class="fa-brands fa-whatsapp mr-1.5"></i> WhatsApp 24/7
+        </a>
+        <p class="text-slate-400">Dimanche - Jeudi : 08:30 - 18:00</p>
+        <p class="text-slate-400">Samedi : 09:00 - 15:00</p>
+      </div>
+    </div>
+
+    <div class="pt-8 border-t border-slate-800 flex flex-col sm:flex-row justify-between items-center gap-4 text-slate-500">
+      <p>&copy; 2025 Bay Delivery SARL. Tous droits réservés.</p>
+      <div class="flex items-center gap-4 text-xs">
+        <a href="#" class="hover:text-slate-400 transition">Conditions Générales d'Utilisation</a>
+        <span>•</span>
+        <a href="#" class="hover:text-slate-400 transition">Politique de Confidentialité</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ===================== WHATSAPP FLOATING BUTTON ===================== -->
+<a href="https://wa.me/213550024896" target="_blank" rel="noopener noreferrer" aria-label="Contactez-nous sur WhatsApp au +213 550 02 48 96"
+  class="fixed bottom-6 right-6 z-40 bg-emerald-500 hover:bg-emerald-600 text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-2xl transition transform hover:scale-110 active:scale-95 group">
+  <i class="fa-brands fa-whatsapp"></i>
+  <span class="absolute right-16 bg-slate-900 text-white text-xs font-semibold py-1.5 px-3 rounded-lg opacity-0 group-hover:opacity-100 transition whitespace-nowrap shadow-lg pointer-events-none">
+    WhatsApp · +213 550 02 48 96
+  </span>
+  <span class="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full border-2 border-white"></span>
+</a>
+
+<!-- ===================== BAYA ASSISTANT LAUNCHER ===================== -->
+<button id="bayaLauncher" onclick="toggleBaya()" aria-label="Ouvrir l'assistante Baya"
+  class="fixed bottom-6 right-24 z-40 bg-gradient-to-br from-brand-500 to-brand-navy text-white pl-2 pr-4 h-14 rounded-full flex items-center gap-2.5 shadow-2xl transition transform hover:scale-105 active:scale-95">
+  <span class="relative w-10 h-10 rounded-full bg-white/15 flex items-center justify-center heading-font font-black text-lg">B
+    <span class="absolute bottom-0 right-0 w-3 h-3 bg-emerald-400 rounded-full border-2 border-brand-600"></span>
+  </span>
+  <span class="hidden sm:flex flex-col items-start leading-tight">
+    <span class="text-[11px] font-bold">Assistante Baya</span>
+    <span class="text-[10px] text-white/70">En ligne · Répond en direct</span>
+  </span>
+  <span class="absolute -top-1 -left-1 w-5 h-5 bg-brand-accent rounded-full text-[10px] font-black flex items-center justify-center border-2 border-white animate-pulse">1</span>
+</button>
+
+<!-- ===================== BAYA CHAT PANEL ===================== -->
+<div id="bayaPanel" class="hidden fixed bottom-24 right-4 sm:right-6 z-50 w-[calc(100vw-2rem)] sm:w-[380px] max-h-[70vh] bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden flex-col">
+
+  <!-- Header -->
+  <div class="bg-gradient-to-r from-brand-navy to-brand-700 text-white px-4 py-3.5 flex items-center gap-3">
+    <div class="relative w-11 h-11 rounded-full bg-white/15 flex items-center justify-center heading-font font-black text-xl flex-shrink-0">B
+      <span class="absolute bottom-0 right-0 w-3 h-3 bg-emerald-400 rounded-full border-2 border-brand-700"></span>
+    </div>
+    <div class="flex-grow leading-tight">
+      <div class="font-bold text-sm flex items-center gap-1.5">Baya <span class="text-[10px] bg-white/15 px-1.5 py-0.5 rounded font-semibold">IA</span></div>
+      <div class="text-[11px] text-brand-200">Assistante Bay Delivery · En ligne</div>
+    </div>
+
+    <!-- WhatsApp icon inside Baya -->
+    <a href="https://wa.me/213550024896" target="_blank" rel="noopener" title="Continuer sur WhatsApp : +213 550 02 48 96"
+       class="w-9 h-9 rounded-full bg-emerald-500 hover:bg-emerald-600 flex items-center justify-center transition flex-shrink-0">
+      <i class="fa-brands fa-whatsapp text-lg"></i>
+    </a>
+    <button onclick="toggleBaya(false)" aria-label="Fermer l'assistante" class="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition flex-shrink-0">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+  </div>
+
+  <!-- WhatsApp quick banner -->
+  <a href="https://wa.me/213550024896" target="_blank" rel="noopener"
+     class="flex items-center gap-3 px-4 py-2.5 bg-emerald-50 border-b border-emerald-100 hover:bg-emerald-100 transition">
+    <i class="fa-brands fa-whatsapp text-emerald-600 text-xl"></i>
+    <span class="text-[11px] text-emerald-800 font-semibold leading-tight">
+      Parler à un agent humain
+      <span class="block font-normal text-emerald-700">+213 550 02 48 96 · réponse &lt; 5 min</span>
+    </span>
+    <i class="fa-solid fa-arrow-right text-emerald-600 text-xs ml-auto"></i>
+  </a>
+
+  <!-- Messages -->
+  <div id="bayaMessages" class="flex-grow p-4 space-y-3 overflow-y-auto custom-scroll bg-slate-50" style="min-height:220px; max-height:340px;"></div>
+
+  <!-- Quick replies -->
+  <div id="bayaChips" class="px-3 pb-2 pt-1 bg-white flex flex-wrap gap-1.5 border-t border-slate-100">
+    <button onclick="bayaQuick('Suivre mon colis')" class="text-[11px] font-semibold bg-brand-50 text-brand-700 border border-brand-100 px-2.5 py-1 rounded-full hover:bg-brand-100 transition">Suivre mon colis</button>
+    <button onclick="bayaQuick('Tarifs de livraison')" class="text-[11px] font-semibold bg-brand-50 text-brand-700 border border-brand-100 px-2.5 py-1 rounded-full hover:bg-brand-100 transition">Tarifs</button>
+    <button onclick="bayaQuick('Ouvrir un compte')" class="text-[11px] font-semibold bg-brand-50 text-brand-700 border border-brand-100 px-2.5 py-1 rounded-full hover:bg-brand-100 transition">Ouvrir un compte</button>
+    <button onclick="bayaQuick('Délais 58 wilayas')" class="text-[11px] font-semibold bg-brand-50 text-brand-700 border border-brand-100 px-2.5 py-1 rounded-full hover:bg-brand-100 transition">Délais</button>
+  </div>
+
+  <!-- Input -->
+  <form onsubmit="bayaSubmit(event)" class="flex items-center gap-2 p-3 border-t border-slate-200 bg-white">
+    <input id="bayaInput" type="text" autocomplete="off" placeholder="Écrivez votre question..."
+      class="flex-grow px-3.5 py-2.5 rounded-xl bg-slate-100 border border-transparent text-sm focus:outline-none focus:bg-white focus:border-brand-400 transition">
+    <button type="submit" aria-label="Envoyer" class="w-10 h-10 rounded-xl bg-brand-500 hover:bg-brand-600 text-white flex items-center justify-center transition flex-shrink-0">
+      <i class="fa-solid fa-paper-plane text-sm"></i>
+    </button>
+  </form>
+</div>
+
+<!-- ===================== TRACKING MODAL ===================== -->
+<div id="trackingModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden items-center justify-center p-4">
+  <div class="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl relative border border-slate-100 max-h-[90vh] overflow-y-auto custom-scroll animate-scaleIn">
+    <button onclick="closeTrackingModal()" aria-label="Fermer" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-600 transition">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+
+    <div class="flex items-center gap-3 mb-6">
+      <div class="w-12 h-12 rounded-2xl bg-brand-50 text-brand-500 flex items-center justify-center text-xl"><i class="fa-solid fa-box"></i></div>
+      <div>
+        <span class="text-xs uppercase font-bold text-brand-600 tracking-wider">Statut en direct</span>
+        <h3 id="trackModalCode" class="text-xl font-extrabold text-slate-800">BAY-784521-DZ</h3>
+      </div>
+    </div>
+
+    <div class="bg-slate-50 p-4 rounded-2xl mb-6 border border-slate-200/80">
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
+        <div><span class="text-slate-400 block">Expéditeur :</span><span class="font-bold text-slate-800">Alger Hub Central</span></div>
+        <div><span class="text-slate-400 block">Destinataire :</span><span class="font-bold text-slate-800">Oran (Akid Lotfi)</span></div>
+        <div><span class="text-slate-400 block">Type :</span><span class="font-bold text-slate-800">Livraison Domicile</span></div>
+        <div><span class="text-slate-400 block">Montant COD :</span><span class="font-bold text-emerald-600">6,500 DZD</span></div>
+      </div>
+    </div>
+
+    <div class="relative pl-6 space-y-6 before:absolute before:left-2 before:top-2 before:bottom-2 before:w-0.5 before:bg-brand-200">
+      <div class="relative">
+        <div class="absolute -left-6 top-0 w-4 h-4 rounded-full bg-emerald-500 ring-4 ring-emerald-100"></div>
+        <div class="text-xs text-emerald-600 font-bold">Aujourd'hui - 10:45</div>
+        <div class="text-sm font-bold text-slate-800">En cours de livraison avec le livreur</div>
+        <p class="text-xs text-slate-500">Le livreur (Kamel B. - 0550 02 ** **) est en route vers votre adresse à Oran.</p>
+      </div>
+      <div class="relative">
+        <div class="absolute -left-6 top-0 w-4 h-4 rounded-full bg-brand-500"></div>
+        <div class="text-xs text-brand-600 font-bold">Aujourd'hui - 06:30</div>
+        <div class="text-sm font-bold text-slate-800">Arrivé au Centre de Tri Régional (Oran)</div>
+        <p class="text-xs text-slate-500">Le colis a été scanné et affecté à la tournée express.</p>
+      </div>
+      <div class="relative">
+        <div class="absolute -left-6 top-0 w-4 h-4 rounded-full bg-brand-300"></div>
+        <div class="text-xs text-slate-400 font-semibold">Hier - 21:15</div>
+        <div class="text-sm font-semibold text-slate-700">Expédié du Hub Principal (Alger)</div>
+        <p class="text-xs text-slate-500">Transfert inter-wilayas en navette nocturne sécurisée.</p>
+      </div>
+      <div class="relative">
+        <div class="absolute -left-6 top-0 w-4 h-4 rounded-full bg-slate-300"></div>
+        <div class="text-xs text-slate-400 font-semibold">Hier - 15:20</div>
+        <div class="text-sm font-semibold text-slate-600">Colis ramassé chez le vendeur</div>
+        <p class="text-xs text-slate-500">Boutique partenaire e-commerce validée.</p>
+      </div>
+    </div>
+
+    <div class="mt-8 flex flex-col sm:flex-row justify-end gap-3 pt-4 border-t border-slate-100">
+      <button onclick="closeTrackingModal()" class="px-5 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-sm">Fermer</button>
+      <a href="https://wa.me/213550024896" target="_blank" rel="noopener" class="px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-sm flex items-center justify-center gap-2">
+        <i class="fa-brands fa-whatsapp"></i> WhatsApp
+      </a>
+      <a href="tel:+213550024896" class="px-5 py-2.5 rounded-xl bg-brand-500 hover:bg-brand-600 text-white font-bold text-sm flex items-center justify-center gap-2">
+        <i class="fa-solid fa-headset"></i> Contacter le Support
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== LOGIN MODAL ===================== -->
+<div id="loginModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden items-center justify-center p-4">
+  <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl relative border border-slate-100 animate-scaleIn">
+    <button onclick="toggleModal('loginModal')" aria-label="Fermer" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-600 transition">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <div class="text-center mb-6">
+      <div class="w-12 h-12 bg-brand-50 text-brand-500 rounded-2xl flex items-center justify-center text-xl mx-auto mb-3"><i class="fa-solid fa-right-to-bracket"></i></div>
+      <h3 class="font-extrabold text-xl text-slate-900">Espace Client Marchand</h3>
+      <p class="text-xs text-slate-500 mt-1">Accédez à votre tableau de bord Bay Delivery</p>
+    </div>
+    <form onsubmit="handleAuthSubmit(event, 'login')" class="space-y-4 text-left">
+      <div>
+        <label for="loginId" class="block text-xs font-bold text-slate-700 uppercase mb-1">Email ou N° Téléphone</label>
+        <input id="loginId" type="text" required placeholder="nom@boutique.dz" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
+      </div>
+      <div>
+        <div class="flex justify-between items-center mb-1">
+          <label for="loginPwd" class="block text-xs font-bold text-slate-700 uppercase">Mot de passe</label>
+          <a href="#" class="text-[11px] text-brand-600 hover:underline">Oublié ?</a>
+        </div>
+        <input id="loginPwd" type="password" required placeholder="••••••••" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
+      </div>
+      <button type="submit" class="w-full py-3 bg-brand-500 hover:bg-brand-600 text-white font-bold rounded-xl text-sm shadow-md transition">Se Connecter</button>
+    </form>
+    <div class="mt-6 text-center pt-4 border-t border-slate-100 text-xs text-slate-500">
+      Vous n'avez pas de compte pro ?
+      <button onclick="toggleModal('loginModal', false); toggleModal('registerModal', true)" class="text-brand-600 font-bold hover:underline">Créer un compte</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== REGISTER MODAL ===================== -->
+<div id="registerModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden items-center justify-center p-4">
+  <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl relative border border-slate-100 max-h-[90vh] overflow-y-auto custom-scroll animate-scaleIn">
+    <button onclick="toggleModal('registerModal')" aria-label="Fermer" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-600 transition">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <div class="text-center mb-6">
+      <div class="w-12 h-12 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center text-xl mx-auto mb-3"><i class="fa-solid fa-user-plus"></i></div>
+      <h3 class="font-extrabold text-xl text-slate-900">Ouvrir un Compte E-commerçant</h3>
+      <p class="text-xs text-slate-500 mt-1">Ramassage gratuit et activation sous 24h ouvrées</p>
+    </div>
+    <form onsubmit="handleAuthSubmit(event, 'register')" class="space-y-3.5 text-left text-xs">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <div>
+          <label for="regName" class="block font-bold text-slate-700 uppercase mb-1">Nom Complet</label>
+          <input id="regName" type="text" required placeholder="Mohamed Benali" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
+        </div>
+        <div>
+          <label for="regShop" class="block font-bold text-slate-700 uppercase mb-1">Nom de la Boutique</label>
+          <input id="regShop" type="text" required placeholder="Ex: Fashion Dz" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
+        </div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <div>
+          <label for="regPhone" class="block font-bold text-slate-700 uppercase mb-1">Numéro de Téléphone</label>
+          <input id="regPhone" type="tel" required placeholder="0550 02 48 96" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
+        </div>
+        <div>
+          <label for="regWilaya" class="block font-bold text-slate-700 uppercase mb-1">Wilaya Principale</label>
+          <select id="regWilaya" class="w-full px-3 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
+            <option>16 - Alger</option>
+            <option>31 - Oran</option>
+            <option>25 - Constantine</option>
+            <option>19 - Sétif</option>
+            <option>09 - Blida</option>
+            <option>Autre Wilaya</option>
+          </select>
+        </div>
+      </div>
+      <div>
+        <label for="regEmail" class="block font-bold text-slate-700 uppercase mb-1">Adresse Email Pro</label>
+        <input id="regEmail" type="email" required placeholder="contact@votre-boutique.dz" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
+      </div>
+      <div>
+        <label for="regVolume" class="block font-bold text-slate-700 uppercase mb-1">Volume estimé par semaine</label>
+        <select id="regVolume" class="w-full px-3 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
+          <option>Moins de 20 colis / semaine</option>
+          <option>20 à 100 colis / semaine</option>
+          <option>+100 colis / semaine (Tarifs négociés)</option>
+        </select>
+      </div>
+      <div class="pt-2">
+        <button type="submit" class="w-full py-3 bg-brand-500 hover:bg-brand-600 text-white font-bold rounded-xl text-sm shadow-md transition">Valider mon Inscription Gratuite</button>
+      </div>
+    </form>
+    <div class="mt-4 text-center text-xs text-slate-500">
+      Déjà inscrit ?
+      <button onclick="toggleModal('registerModal', false); toggleModal('loginModal', true)" class="text-brand-600 font-bold hover:underline">Se connecter</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== TOAST ===================== -->
+<div id="toast" class="fixed top-6 right-6 z-[60] bg-slate-900 text-white px-5 py-3 rounded-2xl shadow-2xl flex items-center gap-3 transition-all duration-300 transform -translate-y-24 opacity-0 pointer-events-none max-w-[90vw]">
+  <i id="toastIcon" class="fa-solid fa-circle-check text-emerald-400 text-lg"></i>
+  <span id="toastMsg" class="text-xs font-semibold">Action réussie</span>
+</div>
+
+<!-- ===================== JAVASCRIPT ===================== -->
+<script>
+/* ---------- DATA : 58 WILAYAS ---------- */
+const WILAYAS_DATA = [
+  { code: "01", name: "Adrar", desk: 900, dom: 1200, delay: "48-72h" },
+  { code: "02", name: "Chlef", desk: 400, dom: 600, delay: "24-48h" },
+  { code: "03", name: "Laghouat", desk: 600, dom: 850, delay: "48h" },
+  { code: "04", name: "Oum El Bouaghi", desk: 450, dom: 700, delay: "24-48h" },
+  { code: "05", name: "Batna", desk: 450, dom: 700, delay: "24-48h" },
+  { code: "06", name: "Béjaïa", desk: 400, dom: 650, delay: "24-48h" },
+  { code: "07", name: "Biskra", desk: 500, dom: 750, delay: "48h" },
+  { code: "08", name: "Béchar", desk: 800, dom: 1100, delay: "48-72h" },
+  { code: "09", name: "Blida", desk: 300, dom: 500, delay: "24h" },
+  { code: "10", name: "Bouira", desk: 350, dom: 550, delay: "24h" },
+  { code: "11", name: "Tamanrasset", desk: 1100, dom: 1500, delay: "72h" },
+  { code: "12", name: "Tébessa", desk: 500, dom: 750, delay: "48h" },
+  { code: "13", name: "Tlemcen", desk: 450, dom: 700, delay: "24-48h" },
+  { code: "14", name: "Tiaret", desk: 450, dom: 700, delay: "24-48h" },
+  { code: "15", name: "Tizi Ouzou", desk: 350, dom: 550, delay: "24h" },
+  { code: "16", name: "Alger", desk: 250, dom: 450, delay: "24h" },
+  { code: "17", name: "Djelfa", desk: 500, dom: 750, delay: "48h" },
+  { code: "18", name: "Jijel", desk: 450, dom: 700, delay: "24-48h" },
+  { code: "19", name: "Sétif", desk: 400, dom: 650, delay: "24h" },
+  { code: "20", name: "Saïda", desk: 500, dom: 750, delay: "48h" },
+  { code: "21", name: "Skikda", desk: 450, dom: 700, delay: "24-48h" },
+  { code: "22", name: "Sidi Bel Abbès", desk: 450, dom: 700, delay: "24-48h" },
+  { code: "23", name: "Annaba", desk: 450, dom: 700, delay: "24-48h" },
+  { code: "24", name: "Guelma", desk: 450, dom: 700, delay: "24-48h" },
+  { code: "25", name: "Constantine", desk: 400, dom: 650, delay: "24h" },
+  { code: "26", name: "Médéa", desk: 350, dom: 550, delay: "24h" },
+  { code: "27", name: "Mostaganem", desk: 400, dom: 650, delay: "24-48h" },
+  { code: "28", name: "M'Sila", desk: 450, dom: 700, delay: "48h" },
+  { code: "29", name: "Mascara", desk: 450, dom: 700, delay: "24-48h" },
+  { code: "30", name: "Ouargla", desk: 700, dom: 950, delay: "48h" },
+  { code: "31", name: "Oran", desk: 400, dom: 600, delay: "24h" },
+  { code: "32", name: "El Bayadh", desk: 650, dom: 900, delay: "48h" },
+  { code: "33", name: "Illizi", desk: 1200, dom: 1600, delay: "72h" },
+  { code: "34", name: "Bordj Bou Arréridj", desk: 400, dom: 650, delay: "24h" },
+  { code: "35", name: "Boumerdès", desk: 300, dom: 500, delay: "24h" },
+  { code: "36", name: "El Tarf", desk: 500, dom: 750, delay: "48h" },
+  { code: "37", name: "Tindouf", desk: 1200, dom: 1600, delay: "72h" },
+  { code: "38", name: "Tissemsilt", desk: 450, dom: 700, delay: "48h" },
+  { code: "39", name: "El Oued", desk: 600, dom: 850, delay: "48h" },
+  { code: "40", name: "Khenchela", desk: 500, dom: 750, delay: "48h" },
+  { code: "41", name: "Souk Ahras", desk: 500, dom: 750, delay: "48h" },
+  { code: "42", name: "Tipaza", desk: 300, dom: 500, delay: "24h" },
+  { code: "43", name: "Mila", desk: 450, dom: 700, delay: "24-48h" },
+  { code: "44", name: "Aïn Defla", desk: 350, dom: 550, delay: "24h" },
+  { code: "45", name: "Naâma", desk: 700, dom: 950, delay: "48h" },
+  { code: "46", name: "Aïn Témouchent", desk: 450, dom: 700, delay: "24-48h" },
+  { code: "47", name: "Ghardaïa", desk: 650, dom: 900, delay: "48h" },
+  { code: "48", name: "Relizane", desk: 450, dom: 700, delay: "24-48h" },
+  { code: "49", name: "Timimoun", desk: 950, dom: 1300, delay: "72h" },
+  { code: "50", name: "Bordj Badji Mokhtar", desk: 1300, dom: 1700, delay: "72-96h" },
+  { code: "51", name: "Ouled Djellal", desk: 550, dom: 800, delay: "48h" },
+  { code: "52", name: "Béni Abbès", desk: 900, dom: 1250, delay: "72h" },
+  { code: "53", name: "In Salah", desk: 1100, dom: 1500, delay: "72h" },
+  { code: "54", name: "In Guezzam", desk: 1300, dom: 1800, delay: "96h" },
+  { code: "55", name: "Touggourt", desk: 700, dom: 950, delay: "48h" },
+  { code: "56", name: "Djanet", desk: 1300, dom: 1800, delay: "96h" },
+  { code: "57", name: "El M'Ghair", desk: 650, dom: 900, delay: "48h" },
+  { code: "58", name: "El Meniaa", desk: 750, dom: 1000, delay: "48-72h" }
+];
+
+const PHONE_DISPLAY = "+213 550 02 48 96";
+const WA_LINK = "https://wa.me/213550024896";
+
+let currentSimMode = 'domicile';
+
+function getWilaya(code) {
+  return WILAYAS_DATA.find(w => w.code === String(code).padStart(2, '0'));
+}
+
+/* ---------- WILAYAS LIST ---------- */
+function renderWilayasList(list) {
+  const container = document.getElementById('wilayasListContainer');
+  if (!container) return;
+  container.innerHTML = '';
+  if (!list.length) {
+    container.innerHTML = '<div class="col-span-full text-center text-slate-400 py-6">Aucune wilaya ne correspond à votre recherche.</div>';
+    return;
+  }
+  list.forEach(w => {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'text-left px-3 py-2 rounded-xl bg-slate-800/70 border border-slate-700 hover:border-brand-400 hover:bg-slate-800 transition flex items-center justify-between gap-2';
+    btn.innerHTML = `
+      <span class="flex items-center gap-2">
+        <span class="w-6 text-[10px] font-bold text-brand-400">${w.code}</span>
+        <span class="text-slate-200 font-semibold truncate">${w.name}</span>
+      </span>
+      <span class="text-[10px] text-emerald-400 font-bold whitespace-nowrap">${w.dom} DA</span>`;
+    btn.onclick = () => selectWilayaFromList(w);
+    container.appendChild(btn);
+  });
+  const badge = document.getElementById('wilayaCountBadge');
+  if (badge) badge.textContent = list.length === WILAYAS_DATA.length ? '58 Wilayas Actives' : list.length + ' Résultat(s)';
+}
+
+function filterWilayas() {
+  const q = (document.getElementById('wilayaSearchInput').value || '').trim().toLowerCase();
+  if (!q) return renderWilayasList(WILAYAS_DATA);
+  const filtered = WILAYAS_DATA.filter(w =>
+    w.name.toLowerCase().includes(q) || w.code.includes(q)
+  );
+  renderWilayasList(filtered);
+}
+
+function selectWilayaFromList(w) {
+  const select = document.getElementById('simWilaya');
+  const optionExists = Array.from(select.options).some(o => o.value === w.code);
+  if (optionExists) {
+    select.value = w.code;
+    runFullSimulation();
+    showToast(`${w.code} - ${w.name} sélectionnée · ${w.dom} DA (Domicile)`, 'fa-location-dot');
+    document.getElementById('simulateur').scrollIntoView({ behavior: 'smooth' });
+  } else {
+    showToast(`${w.code} - ${w.name} · Domicile ${w.dom} DA / Stop Desk ${w.desk} DA · ${w.delay}`, 'fa-truck-fast');
+  }
+}
+
+/* ---------- HERO TARIF ---------- */
+function calculateHeroTarif() {
+  const destCode = document.getElementById('heroDestWilaya').value;
+  const mode = document.getElementById('heroDeliveryMode').value;
+  const weightIdx = parseInt(document.getElementById('heroWeight').value, 10);
+
+  const w = getWilaya(destCode) || WILAYAS_DATA[15];
+  let price = mode === 'stopdesk' ? w.desk : w.dom;
+
+  const extra = [0, 150, 400][weightIdx] || 0;
+  price += extra;
+
+  document.getElementById('heroResultPrice').textContent = price.toLocaleString('fr-FR') + ' DZD';
+  document.getElementById('heroResultDelay').textContent =
+    w.delay.replace('h', ' Heures').replace('-', ' à ').replace('Heures', 'Heures');
+  document.getElementById('heroResultDelay').textContent = w.delay.includes('-')
+    ? w.delay.replace('h', '') + ' H'
+    : w.delay.toUpperCase();
+}
+
+/* ---------- FULL SIMULATOR ---------- */
+function setSimMode(mode) {
+  currentSimMode = mode;
+  const btnD = document.getElementById('btnModeDomicile');
+  const btnK = document.getElementById('btnModeDesk');
+
+  if (mode === 'domicile') {
+    btnD.className = 'py-3 px-3 rounded-xl border-2 border-brand-500 bg-brand-50 font-bold text-xs text-brand-700 text-center transition';
+    btnK.className = 'py-3 px-3 rounded-xl border border-slate-300 bg-white font-semibold text-xs text-slate-700 text-center hover:border-slate-400 transition';
+  } else {
+    btnK.className = 'py-3 px-3 rounded-xl border-2 border-brand-500 bg-brand-50 font-bold text-xs text-brand-700 text-center transition';
+    btnD.className = 'py-3 px-3 rounded-xl border border-slate-300 bg-white font-semibold text-xs text-slate-700 text-center hover:border-slate-400 transition';
+  }
+  runFullSimulation();
+}
+
+function updateSimWeight(val) {
+  document.getElementById('simWeightDisplay').textContent = val + ' Kg';
+  runFullSimulation();
+}
+
+function runFullSimulation() {
+  const code = document.getElementById('simWilaya').value;
+  const weight = parseInt(document.getElementById('simWeightSlider').value, 10) || 1;
+  const w = getWilaya(code) || WILAYAS_DATA[15];
+
+  let base = currentSimMode === 'domicile' ? w.dom : w.desk;
+  let extra = weight > 5 ? (weight - 5) * 70 : 0;
+  const total = base + extra;
+
+  document.getElementById('simFinalPrice').textContent = total.toLocaleString('fr-FR') + ' DZD';
+  document.getElementById('simFinalDelay').innerHTML =
+    '<i class="fa-solid fa-clock text-amber-500"></i> ' + w.delay.replace('h', ' H');
+}
+
+/* ---------- TRACKING ---------- */
+function handleTracking(event, inputId) {
+  event.preventDefault();
+  const value = (document.getElementById(inputId).value || '').trim();
+  if (!value) return;
+  document.getElementById('trackModalCode').textContent = value.toUpperCase();
+  openModal('trackingModal');
+}
+function closeTrackingModal() { closeModal('trackingModal'); }
+
+/* ---------- MODALS ---------- */
+function openModal(id) {
+  const m = document.getElementById(id);
+  if (!m) return;
+  m.classList.remove('hidden');
+  m.classList.add('flex');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal(id) {
+  const m = document.getElementById(id);
+  if (!m) return;
+  m.classList.add('hidden');
+  m.classList.remove('flex');
+  document.body.style.overflow = '';
+}
+function toggleModal(id, force) {
+  const m = document.getElementById(id);
+  if (!m) return;
+  const shouldOpen = (typeof force === 'boolean') ? force : m.classList.contains('hidden');
+  shouldOpen ? openModal(id) : closeModal(id);
+}
+
+/* Close modals on backdrop click / Escape */
+document.querySelectorAll('#trackingModal, #loginModal, #registerModal').forEach(modal => {
+  modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(modal.id); });
+});
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    ['trackingModal', 'loginModal', 'registerModal'].forEach(closeModal);
+    toggleBaya(false);
+  }
+});
+
+/* ---------- FORMS ---------- */
+function handleContactSubmit(e) {
+  e.preventDefault();
+  const name = document.getElementById('cName').value;
+  showToast(`Merci ${name} ! Un conseiller vous rappelle sous 30 min.`, 'fa-circle-check');
+  e.target.reset();
+}
+
+function handleAuthSubmit(e, type) {
+  e.preventDefault();
+  if (type === 'login') {
+    showToast('Connexion au portail marchand réussie.', 'fa-circle-check');
+    closeModal('loginModal');
+  } else {
+    showToast('Compte créé ! Activation sous 24h ouvrées.', 'fa-circle-check');
+    closeModal('registerModal');
+  }
+  e.target.reset();
+}
+
+/* ---------- TOAST ---------- */
+let toastTimer = null;
+function showToast(message, icon = 'fa-circle-check') {
+  const toast = document.getElementById('toast');
+  const msg = document.getElementById('toastMsg');
+  const ic = document.getElementById('toastIcon');
+  msg.textContent = message;
+  ic.className = `fa-solid ${icon} text-emerald-400 text-lg`;
+  toast.classList.remove('-translate-y-24', 'opacity-0');
+  toast.classList.add('translate-y-0', 'opacity-100');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => {
+    toast.classList.add('-translate-y-24', 'opacity-0');
+    toast.classList.remove('translate-y-0', 'opacity-100');
+  }, 4200);
+}
+
+/* ---------- MOBILE MENU ---------- */
+function closeMobileMenu() {
+  const m = document.getElementById('mobileMenu');
+  if (m) m.classList.add('hidden');
+}
+document.addEventListener('DOMContentLoaded', () => {
+  const mobileBtn = document.getElementById('mobileMenuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  if (mobileBtn && mobileMenu) {
+    mobileBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+  }
+});
+
+/* ---------- NAV SHADOW ON SCROLL ---------- */
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('mainNav');
+  if (!nav) return;
+  if (window.scrollY > 20) {
+    nav.classList.add('shadow-md');
+  } else {
+    nav.classList.remove('shadow-md');
+  }
+});
+
+/* ---------- SCROLL REVEAL ---------- */
+function initReveal() {
+  const items = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window)) {
+    items.forEach(i => i.classList.add('is-visible'));
+    return;
+  }
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  items.forEach(i => obs.observe(i));
+  /* Safety fallback */
+  setTimeout(() => items.forEach(i => i.classList.add('is-visible')), 2500);
+}
+
+/* =========================================================
+   BAYA — Assistante virtuelle Bay Delivery
+   ========================================================= */
+let bayaOpen = false;
+let bayaGreeted = false;
+
+function toggleBaya(force) {
+  const panel = document.getElementById('bayaPanel');
+  const launcher = document.getElementById('bayaLauncher');
+  if (!panel) return;
+  const shouldOpen = (typeof force === 'boolean') ? force : !bayaOpen;
+  bayaOpen = shouldOpen;
+
+  if (shouldOpen) {
+    panel.classList.remove('hidden');
+    panel.classList.add('flex');
+    if (launcher) launcher.style.opacity = '0';
+    if (launcher) launcher.style.pointerEvents = 'none';
+    if (!bayaGreeted) {
+      bayaGreeted = true;
+      setTimeout(() => {
+        bayaPushBot("Bonjour 👋 Je suis <strong>Baya</strong>, votre assistante Bay Delivery. Je peux vous aider à suivre un colis, estimer un tarif ou ouvrir votre compte pro.");
+      }, 250);
+      setTimeout(() => {
+        bayaPushBot("Besoin d'un humain ? Cliquez sur l'icône <i class='fa-brands fa-whatsapp text-emerald-500'></i> en haut ou écrivez « agent » — nous sommes joignables au <strong>" + PHONE_DISPLAY + "</strong>.");
+      }, 1100);
+    }
+    setTimeout(() => document.getElementById('bayaInput').focus(), 300);
+  } else {
+    panel.classList.add('hidden');
+    panel.classList.remove('flex');
+    if (launcher) launcher.style.opacity = '1';
+    if (launcher) launcher.style.pointerEvents = 'auto';
+  }
+}
+
+function bayaPushBot(html) {
+  const wrap = document.getElementById('bayaMessages');
+  const row = document.createElement('div');
+  row.className = 'chat-bubble flex items-end gap-2';
+  row.innerHTML = `
+    <div class="w-7 h-7 rounded-full bg-gradient-to-br from-brand-500 to-brand-navy text-white flex items-center justify-center heading-font font-black text-xs flex-shrink-0">B</div>
+    <div class="bg-white border border-slate-200 text-slate-700 text-[12.5px] leading-relaxed px-3.5 py-2.5 rounded-2xl rounded-bl-md shadow-sm max-w-[85%]">${html}</div>`;
+  wrap.appendChild(row);
+  wrap.scrollTop = wrap.scrollHeight;
+}
+
+function bayaPushUser(text) {
+  const wrap = document.getElementById('bayaMessages');
+  const row = document.createElement('div');
+  row.className = 'chat-bubble flex justify-end';
+  row.innerHTML = `<div class="bg-brand-500 text-white text-[12.5px] leading-relaxed px-3.5 py-2.5 rounded-2xl rounded-br-md shadow-sm max-w-[85%]">${text}</div>`;
+  wrap.appendChild(row);
+  wrap.scrollTop = wrap.scrollHeight;
+}
+
+function bayaTyping() {
+  const wrap = document.getElementById('bayaMessages');
+  const row = document.createElement('div');
+  row.id = 'bayaTypingRow';
+  row.className = 'flex items-end gap-2';
+  row.innerHTML = `
+    <div class="w-7 h-7 rounded-full bg-gradient-to-br from-brand-500 to-brand-navy text-white flex items-center justify-center heading-font font-black text-xs flex-shrink-0">B</div>
+    <div class="typing bg-white border border-slate-200 px-3.5 py-3 rounded-2xl rounded-bl-md shadow-sm"><i></i><i></i><i></i></div>`;
+  wrap.appendChild(row);
+  wrap.scrollTop = wrap.scrollHeight;
+}
+
+function bayaClearTyping() {
+  const row = document.getElementById('bayaTypingRow');
+  if (row) row.remove();
+}
+
+function bayaSubmit(e) {
+  e.preventDefault();
+  const input = document.getElementById('bayaInput');
+  const text = (input.value || '').trim();
+  if (!text) return;
+  input.value = '';
+  bayaPushUser(text);
+  bayaReply(text);
+}
+
+function bayaQuick(text) {
+  bayaPushUser(text);
+  bayaReply(text);
+}
+
+function bayaReply(userText) {
+  const t = userText.toLowerCase();
+  bayaTyping();
+
+  let answer = "";
+
+  if (t.includes('suivi') || t.includes('colis') || t.includes('tracking') || t.includes('barcode') || t.includes('où')) {
+    answer = "Pour suivre votre colis, saisissez votre numéro de suivi (ex. <strong>BAY-784521-DZ</strong>) dans la barre de suivi en haut de page. Vous verrez en temps réel chaque étape : ramassage, hub régional, mise en livraison. 🚚";
+  } else if (t.includes('tarif') || t.includes('prix') || t.includes('coût') || t.includes('combien') || t.includes('calcul')) {
+    answer = "Nos tarifs démarrent à <strong>250 DZD</strong> (Stop Desk Alger) et <strong>450 DZD</strong> (domicile Alger). Utilisez le <a href='#simulateur' class='text-brand-600 font-semibold underline'>calculateur</a> pour une estimation exacte selon la wilaya et le poids. Les tarifs sont dégressifs au volume. 📦";
+  } else if (t.includes('compte') || t.includes('inscription') || t.includes('créer') || t.includes('ouvrir') || t.includes('register')) {
+    answer = "Avec plaisir ! L'ouverture d'un compte pro est <strong>gratuite</strong> et activée sous 24h ouvrées. Vous bénéficiez du ramassage quotidien gratuit et de l'API e-commerce. Cliquez sur « Ouvrir un Compte » en haut de page. ✨";
+  } else if (t.includes('délai') || t.includes('delai') || t.includes('wilaya') || t.includes('temps') || t.includes('secteur')) {
+    answer = "Nos délais : <strong>24h</strong> sur Alger et grandes métropoles, <strong>48h</strong> sur les hauts plateaux et <strong>72h max</strong> dans le Grand Sud — sur les 58 wilayas. Consultez la liste complète dans la section « 58 Wilayas ». 🗺️";
+  } else if (t.includes('cod') || t.includes('cash') || t.includes('paiement') || t.includes('argent') || t.includes('virement') || t.includes('versement')) {
+    answer = "Le service <strong>Cash On Delivery</strong> est notre spécialité : nous encaissons auprès de votre client et vous versons les fonds sous <strong>24h à 48h</strong> par CCP ou virement bancaire, avec un bordereau détaillé. 💰";
+  } else if (t.includes('retour') || t.includes('refus') || t.includes('échange') || t.includes('npai')) {
+    answer = "Nous gérons les retours de A à Z : récupération chez le client, rapatriement express vers votre hub et réintégration en stock. Notre cellule de confirmation téléphonique réduit fortement les retours. 🔄";
+  } else if (t.includes('agent') || t.includes('humain') || t.includes('whatsapp') || t.includes('appel') || t.includes('téléphone') || t.includes('contact') || t.includes('parler')) {
+    answer = "Je vous mets en relation avec un agent humain 💬<br>WhatsApp / Téléphone : <a href='" + WA_LINK + "' target='_blank' class='text-emerald-600 font-bold underline'>" + PHONE_DISPLAY + "</a><br>Ou cliquez sur l'icône WhatsApp en haut de ce chat.";
+  } else if (t.includes('bonjour') || t.includes('salut') || t.includes('salam') || t.includes('hello') || t.includes('bonsoir')) {
+    answer = "Bonjour 👋 Comment puis-je vous aider aujourd'hui ? Suivi de colis, tarifs, ouverture de compte ou délais de livraison ?";
+  } else if (t.includes('adresse') || t.includes('siège') || t.includes('hub') || t.includes('agence')) {
+    answer = "Notre hub principal se situe à la <strong>Zone Industrielle Bab Ezzouar / Dar El Beïda, Alger</strong>, avec plus de 120 points relais à travers le pays. 📍";
+  } else {
+    answer = "Je note votre demande 📝 Pour une réponse précise et immédiate, un agent Bay Delivery est disponible sur WhatsApp au <a href='" + WA_LINK + "' target='_blank' class='text-emerald-600 font-bold underline'>" + PHONE_DISPLAY + "</a>. Vous pouvez aussi me demander : « suivre un colis », « tarifs », « ouvrir un compte » ou « délais ».";
+  }
+
+  setTimeout(() => {
+    bayaClearTyping();
+    bayaPushBot(answer);
+  }, 750);
+}
+
+/* ---------- INITIALISATION ---------- */
+document.addEventListener('DOMContentLoaded', () => {
+  renderWilayasList(WILAYAS_DATA);
+  calculateHeroTarif();
+  runFullSimulation();
+  initReveal();
+});
+</script>
+</body>
+</html>
